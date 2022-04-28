@@ -44,9 +44,9 @@ function AddUser() {
     return (
         <>
             <Container maxWidth="sm" sx={{ height: "300px", display: "flex", flexDirection: "column", justifyContent: "space-evenly", alignItems: "center" }}>
-                <TextField fullWidth label="Username" id="fullWidth" onChange={(e) => { setName(e.target.value)  }} />
-                <TextField fullWidth label="UserId" id="fullWidth" onChange={(e) => { setUserId(e.target.value)}} />
-                <Fab color="primary" aria-label="add" onClick={getTokens} >
+                <TextField fullWidth label="Username" id="fullWidth" value={name} onChange={(e) => { setName(e.target.value)  }} />
+                <TextField fullWidth label="UserId" id="fullWidth" value={userId} onChange={(e) => { setUserId(e.target.value)}} />
+                <Fab color="primary" aria-label="add" onClick={getTokens} disabled={userId<1 || name<1}>
                     <AddIcon />
                 </Fab>
             </Container>
